@@ -1,5 +1,5 @@
 #Hotdog Stylus
--
+
 [Hotdog Stylus on Trello](https://trello.com/b/LJv4WXRR/hotdog-stylus)
 
 [Hotdog Stylus on GitHub](https://github.com/leurcutis/hotdog-stylus)
