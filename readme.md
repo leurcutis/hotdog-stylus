@@ -3,7 +3,7 @@
 
 [Hotdog Stylus on GitHub](https://github.com/leurcutis/hotdog-stylus)
 
-“Its, uh, **style**, man.  **Style** is everything. **Style** is not to be, uh, confused with **class**. A Mercedes Benz is **class**, because it represents money. However, chilly dogs have absolutely no **class**, but a great deal of **style**. And punk rock, new wave, what ever you have, uh, reggae, rasta fari hair cuts, what have you, are all different kinds of **styles**. None of them have any **class**. I got **class**.”
+*“Its, uh, **style**, man.  **Style** is everything. **Style** is not to be, uh, confused with **class**. A Mercedes Benz is **class**, because it represents money. However, chilly dogs have absolutely no **class**, but a great deal of **style**. And punk rock, new wave, what ever you have, uh, reggae, rasta fari hair cuts, what have you, are all different kinds of **styles**. None of them have any **class**. I got **class**.”*
 **- David Lee Roth, 1983**
 
 
