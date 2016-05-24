@@ -1,4 +1,5 @@
 var Garment = require('../models/garment_model.js');
+var User = require('../models/user_model.js');
 var controller = {};
 
 //closet get -> gets all items in closet
@@ -12,7 +13,7 @@ controller.index = function(req, res) {
 };
 
 
-//todo create
+//garment create
 controller.create = function(req, res) {
 
   var garment = new Garment({
@@ -27,8 +28,16 @@ controller.create = function(req, res) {
 
   garment.save(function(err) {
     if (err) throw err;
-    res.json(garment);
+    // res.json(garment);
     // add code: push garment into closet array in user model here
+  });
+  var user = User.findById('57439dbbbc946f327297cacc', function(err, user) {
+    if (err) throw err;
+    user.closet.push(garment);
+    res.json(garment);
+    user.save(function(err) {
+      if (err) throw err;
+    });
   });
 };
 

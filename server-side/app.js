@@ -31,6 +31,10 @@ app.use('/api/garments', garment_router);
 app.use('/api/outfits', outfit_router);
 app.use('/api/users', user_router);
 
+app.get('/', function(req, res) {
+  res.json({message: 'hello, suckas. welcome to HOTDOG STYLUS'});
+});
+
 app.listen(port, function() {
   console.log('listening on port ' + port);
 });

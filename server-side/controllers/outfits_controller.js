@@ -43,7 +43,7 @@ controller.update = function(req, res) {
   var createdAt = req.body.createdAt;
   var updatedAt = req.body.updatedAt;
 
-  Garment.findOneAndUpdate(
+  Outfit.findOneAndUpdate(
     {_id: id},
     { name: name,
       hat_id: hat_id,

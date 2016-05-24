@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
-var outfit = require('../models/outfit_model.js');
-var closet = require('../models/garment_model.js');
+var Outfit = require('../models/outfit_model.js');
+var Garment = require('../models/garment_model.js');
+
 
 var userSchema = new mongoose.Schema({
   firstName: String,
@@ -8,7 +9,7 @@ var userSchema = new mongoose.Schema({
   email: String,
   password: String,
   avatarUrl: String,
-  closet: [],
+  closet: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Garment' }],
   outfits: [],
   createdAt: {type: Date, default: Date.now},
   updatedAt: {type: Date, default: Date.now},

@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
+var user = require('../models/user_model.js');
+
 var garmentSchema = new mongoose.Schema({
+
   name: String,
   type: String,
   size: String,
