@@ -28,8 +28,8 @@ controller.create = function(req, res) {
 
   outfit.save(function(err) {
     if (err) throw err;
-    // res.json(outfit);
-    // add code: push outfit into outfit array in user model here
+
+// push outfit into outfit array in user model here
   });
     var user = User.findById('57439dbbbc946f327297cacc', function(err, user) {
     if (err) throw err;
