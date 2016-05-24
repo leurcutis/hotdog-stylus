@@ -10,7 +10,7 @@ var userSchema = new mongoose.Schema({
   password: String,
   avatarUrl: String,
   closet: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Garment' }],
-  outfits: [],
+  outfits: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Outfit' }],
   createdAt: {type: Date, default: Date.now},
   updatedAt: {type: Date, default: Date.now},
 });
