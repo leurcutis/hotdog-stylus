@@ -41,6 +41,18 @@ controller.create = function(req, res) {
   });
 };
 
+controller.show = function(req, res) {
+  var id = req.params.id;
+  Garment.findOne(
+    {_id: id},
+    function(err, outfit) {
+    if (err) {
+      throw err;
+    }
+      res.json(outfit);
+  });
+};
+
 //garment update
 controller.update = function(req, res) {
   var id = req.params.id;

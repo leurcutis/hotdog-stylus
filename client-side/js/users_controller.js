@@ -10,6 +10,7 @@ function UsersController($http){
  self.addUser = addUser;
  self.newUser = {};
  self.deleteUser = deleteUser;
+ self.showUser = showUser;
 
   function getUsers() {
     $http
@@ -17,21 +18,19 @@ function UsersController($http){
       .then(function(response) {
         console.log(response);
         self.all = response.data;
-      });
+    });
   }
 
   getUsers();
 
-  // show one user
-
-  // function showUser() {
-  //   $http
-  //     .get('http://localhost:3000/api/users/' + user._id)
-  //     .then(function(response) {
-  //       console.log(response);
-  //       self.all = response.data;
-  //     });
-  // }
+  function showUser() {
+    $http
+      .get('http://localhost:3000/api/users/' + user._id)
+      .then(function(response) {
+        console.log(response);
+        self.all = response.data;
+    });
+  }
 
   function addUser() {
     $http
@@ -39,7 +38,7 @@ function UsersController($http){
       .then(function(response) {
         console.log('add user running');
         getUsers();
-      });
+    });
   }
 
   // add code for update user here
@@ -51,7 +50,6 @@ function UsersController($http){
         console.log(response);
         var index = self.all.indexOf(user);
         self.all.splice(index, 1);
-      });
+    });
   }
-
 }

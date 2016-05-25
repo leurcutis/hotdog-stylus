@@ -28,7 +28,18 @@ controller.create = function(req, res) {
   user.save(function(err) {
     if (err) throw err;
     res.json(user);
-    //
+  });
+};
+
+controller.show = function(req, res) {
+  var id = req.params.id;
+  User.findOne(
+    {_id: id},
+    function(err, user) {
+    if (err) {
+      throw err;
+    }
+      res.json(user);
   });
 };
 
@@ -55,7 +66,6 @@ controller.update = function(req, res) {
     if (err) {
       throw err;
     }
-      res.json(user);
   });
 };
 
@@ -63,7 +73,7 @@ controller.update = function(req, res) {
 controller.destroy = function(req, res){
   var id = req.params.id;
   console.log(req.body, req.params);
-  Garment.findOneAndRemove({_id: id}, function(err, doc, result){
+  User.findOneAndRemove({_id: id}, function(err, doc, result){
     if (err){
       console.log(err);
     }
@@ -71,5 +81,7 @@ controller.destroy = function(req, res){
     res.json({status: "user deleted"});
   });
 };
+
+// code that destroys associated garments and outfits when a user is destroyed
 
 module.exports = controller;

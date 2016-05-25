@@ -9,7 +9,8 @@ router.route('/')
 
 router.route('/:id')
   .patch(usersController.update)
-  .delete(usersController.destroy);
+  .delete(usersController.destroy)
+  .get(usersController.show);
 
 
 module.exports = router;

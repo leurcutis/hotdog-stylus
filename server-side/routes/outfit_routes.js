@@ -9,7 +9,8 @@ router.route('/')
 
 router.route('/:id')
   .patch(outfitsController.update)
-  .delete(outfitsController.destroy);
+  .delete(outfitsController.destroy)
+  .get(outfitsController.show);
 
 
 module.exports = router;

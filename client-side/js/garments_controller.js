@@ -2,7 +2,7 @@ angular
   .module('HotDogStylusApp')
   .controller('GarmentsController', GarmentsController);
 
-DoubleDoubleController.$inject = ['$http'];
+GarmentsController.$inject = ['$http'];
 
 function GarmentsController($http){
  var self = this;
@@ -10,6 +10,7 @@ function GarmentsController($http){
  self.addGarment = addGarment;
  self.newGarment = {};
  self.deleteGarment = deleteGarment;
+ self.sampleImage = 'http://i.imgur.com/NC68JHO.jpg';
 
   function getGarments() {
     $http
@@ -17,21 +18,19 @@ function GarmentsController($http){
       .then(function(response) {
         console.log(response);
         self.all = response.data;
-      });
+    });
   }
 
   getGarments();
 
-  // show one garment
-
-  // function showGarment() {
-  //   $http
-  //     .get('http://localhost:3000/api/garments/' + garment._id)
-  //     .then(function(response) {
-  //       console.log(response);
-  //       self.all = response.data;
-  //     });
-  // }
+  function showGarment() {
+    $http
+      .get('http://localhost:3000/api/garments/' + garment._id)
+      .then(function(response) {
+        console.log(response);
+        self.all = response.data;
+    });
+  }
 
   function addGarment() {
     $http
@@ -39,7 +38,7 @@ function GarmentsController($http){
       .then(function(response) {
         console.log('add garment running');
         getGarments();
-      });
+    });
   }
 
   // add code for update garment here
@@ -51,7 +50,6 @@ function GarmentsController($http){
         console.log(response);
         var index = self.all.indexOf(garment);
         self.all.splice(index, 1);
-      });
+    });
   }
-
 }

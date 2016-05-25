@@ -41,6 +41,18 @@ controller.create = function(req, res) {
   });
 };
 
+controller.show = function(req, res) {
+  var id = req.params.id;
+  Outfit.find(
+    {_id: id},
+    function(err, outfit) {
+    if (err) {
+      throw err;
+    }
+      res.json(outfit);
+  });
+};
+
 //outfit update
 controller.update = function(req, res) {
   var id = req.params.id;

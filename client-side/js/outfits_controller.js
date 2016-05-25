@@ -17,21 +17,19 @@ function OutfitsController($http){
       .then(function(response) {
         console.log(response);
         self.all = response.data;
-      });
+    });
   }
 
   getOutfits();
 
-  // show one outfit
-
-  // function showOutfit() {
-  //   $http
-  //     .get('http://localhost:3000/api/outfits/' + outfit._id)
-  //     .then(function(response) {
-  //       console.log(response);
-  //       self.all = response.data;
-  //     });
-  // }
+  function showOutfit() {
+    $http
+      .get('http://localhost:3000/api/outfits/' + outfit._id)
+      .then(function(response) {
+        console.log(response);
+        self.all = response.data;
+    });
+  }
 
   function addOutfit() {
     $http
@@ -39,7 +37,7 @@ function OutfitsController($http){
       .then(function(response) {
         console.log('add outfit running');
         getOutfits();
-      });
+    });
   }
 
   // add code for update outfit here
@@ -51,7 +49,6 @@ function OutfitsController($http){
         console.log(response);
         var index = self.all.indexOf(outfit);
         self.all.splice(index, 1);
-      });
-    }
-
+    });
+  }
 }
